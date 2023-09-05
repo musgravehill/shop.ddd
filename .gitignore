@@ -1,0 +1,6 @@
+/sys/web/sitemap.xml
+/sys/web/robots.txt
+/nbproject
+docker-conf/nginx/error.log
+xdebug/xdebug.log
+sys/composer.lock

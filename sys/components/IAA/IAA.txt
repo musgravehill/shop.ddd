@@ -1,0 +1,6 @@
+
+What is Identification vs Authentication vs Authorisation?
+ 
+Identification is the claim of a subject of its identity. 
+Authentication is the proof of identity that is achieved through providing credentials to the access control mechanism. 
+Authorization is the mechanism that determines the access level(s) of the subjects to the objects.

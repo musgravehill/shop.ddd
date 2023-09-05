@@ -1,0 +1,4 @@
+location /p/ {
+		rewrite ^/p/(\d+)\-.*$ /p/$1.html permanent;
+	
+	}

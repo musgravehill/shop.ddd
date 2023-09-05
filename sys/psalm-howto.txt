@@ -1,0 +1,18 @@
+
+
+============= PSALM ================================================================================================
+
+cd /var/www/sdbn/shop
+composer require --dev vimeo/psalm
+cd /var/www/sdbn/shop && /var/www/sdbn/shop/vendor/bin/psalm --init
+
+cd /var/www/sdbn/shop && /var/www/sdbn/shop/vendor/bin/psalm
+
+    # If you have a bunch of errors and you don't want to fix them all at once, 
+    # Psalm can hide errors in existing code; will generate a file containing the current HIDING errors.
+cd /var/www/sdbn/shop && /var/www/sdbn/shop/vendor/bin/psalm --set-baseline=psalm-baseline.xml
+
+    # This will remove fixed issues, but will not add new issues. 
+cd /var/www/sdbn/shop && /var/www/sdbn/shop/vendor/bin/psalm --update-baseline 
+
+cd /var/www/sdbn/shop && /var/www/sdbn/shop/vendor/bin/psalm --no-cache

@@ -1,0 +1,16 @@
+
+//upload DB to local
+docker exec -i mariadb_sdbn sh -c 'exec mysql -usdbn -psdbnpass sdbn' < /home/eva/DEV/BU/BN/bn.2023-06-02.sql
+
+//make zip in server
+zip -r -q bzn.imgsys.zip /var/www/beznalom.com/shop/web/imgsys  
+
+//download zip to 
+/home/eva/DEV/www/beznalom.com/sys/web/imgsys/bu 
+
+brandcat753  brandcat - не закачивать. Их отдельно в imgBrandCat
+Также для всех Категорий искать картинки, где ТЕГ == catName,
+т.к. не все теги содержат "brandcat", хотя картинка использована в категории. 
+
+Вначале мигрировать картинки категорий и удалять записи в img-sys.
+Оставшееся в img-sys мигрировать в img-sys-новый.

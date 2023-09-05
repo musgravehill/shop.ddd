@@ -1,0 +1,22 @@
+
+
+Create files   /docker-conf/sphinx/data/searchd.log  && /docker-conf/sphinx/data/searchd.pid
+
+FIRST INIT terminal: 
+cd /.../mysite (where docker-compose.yml) && 
+docker compose run sphinx_sdbn indexer --all --rotate --config /opt/sphinx/conf/sphinx.conf
+
+AFTER: vscode_dockerContainer_sphinx_attachShell: indexer --all --rotate --config /opt/sphinx/conf/sphinx.conf
+
+docker-compose down 
+docker-compose up
+
+SEE AT vscode Docker - containers - sphinx_sdbn  "Show LOGS"! See at logs! And "Inspect"
+
+
+
+ 
+ 
+
+	
+

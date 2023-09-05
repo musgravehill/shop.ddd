@@ -1,0 +1,10 @@
+
+
+
+@reboot /usr/bin/searchd --config /etc/sphinxsearch/conf/sphinx.conf  >/dev/null 2>&1
+0 */1 * * * indexer --all --rotate --quiet --config /etc/sphinxsearch/conf/sphinx.conf   >/dev/null 2>&1
+* * * * * /var/www/beznalom.com/shop/yii cron/everyminute
+00 03 * * * /usr/local/sbin/backup-tar.sh
+* * * * * /var/www/vot-tut.ru/shop/yii cron/everyminute
+* * * * * /var/www/bznddd/beznalom.com/sys/yii cron/everyminute
+

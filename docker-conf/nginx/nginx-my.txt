@@ -1,0 +1,7 @@
+
+create file docker-conf/nginx/error.log
+
+
+location ~ /p/\d+\- {
+		rewrite ^/p/(\d+)\-.+$ /product/redir/$1 permanent;	
+    }	

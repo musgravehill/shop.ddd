@@ -1,0 +1,6 @@
+
+============= PHPUNIT ==============================================================================================
+ 
+  /var/www/sdbn/sys/vendor/bin/phpunit --display-notices --colors=always --configuration=/var/www/sdbn/sys/components/SupplierImport/tests/phpunit.xml /var/www/sdbn/sys/components/SupplierImport/tests
+
+ 

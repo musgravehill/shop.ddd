@@ -1,0 +1,13 @@
+
+vscode docker php_sdbn "Attach shell"
+terminal:
+
+chmod 774 /var/www/sdbn/sys/yii 
+chmod 774 /var/www/sdbn/sys/yii-docker
+chmod 774 /var/www/sdbn/sys/yii-dev
+/var/www/sdbn/sys/yii-docker cron/everyminute
+
+cd /var/www/sdbn/sys && composer update
+
+cd /var/www/sdbn/sys && composer require openspout/openspout
+  

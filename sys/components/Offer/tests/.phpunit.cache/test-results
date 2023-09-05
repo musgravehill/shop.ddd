@@ -1,0 +1,1 @@
+{"version":1,"defects":{"app\\components\\Offer\\tests\\OfferTest::testMutator":5},"times":{"app\\components\\Offer\\tests\\OfferFactoryTest::testGuestNoItems":0.002,"app\\components\\Offer\\tests\\OfferFactoryTest::testGuest0":0.001,"app\\components\\Offer\\tests\\OfferTest::testMutator":0.008,"app\\components\\Offer\\tests\\OfferTest::testTrue":0}}

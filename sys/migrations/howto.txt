@@ -1,0 +1,16 @@
+use yii\db\Schema;
+use yii\db\Migration;
+
+class m170913_064407_tbl_user extends Migration {
+
+    public function safeUp() {
+        $this->execute("CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `pass` varchar(64) NOT NULL,
+  `role` varchar(16) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;"); 
+    }

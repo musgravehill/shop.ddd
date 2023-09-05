@@ -1,0 +1,23 @@
+
+DEBIAN 10 ONLY!!!!
+deb11 not support Sphinx! 
+
+/etc/sphinxsearch/conf/sphinx.conf
+
+in sphinx.conf replace DB-data and PATH to index,pid,log,etc
+
+crontab -e
+MY CRONTAB каждый час индексировать 
+@reboot /usr/bin/searchd --config /etc/sphinxsearch/conf/sphinx.conf  >/dev/null 2>&1
+0 */1 * * * indexer --all --rotate --quiet --config /etc/sphinxsearch/conf/sphinx.conf   >/dev/null 2>&1 
+
+/usr/bin/searchd --config /etc/sphinxsearch/conf/sphinx.conf
+/usr/bin/searchd --config /etc/sphinxsearch/conf/sphinx.conf --stopwait 
+/usr/bin/searchd --config /etc/sphinxsearch/conf/sphinx.conf --status
+
+ЕСЛИ ПОМЕНЯЛ СТРУКТУРУ ИНДЕКСОВ, ОСОБЕННО RT, ТО НАДО ОСТАНОВИТЬ SEARCHD, УДАЛИТЬ ФАЙЛЫ ИНДЕКСОВ ИЗ /var/sphinxsearch/index***. 
+ПОТОМ ЗАПУСТИТЬ indexer --all, ПОТОМ ЗАПУСТИТЬ searchd.
+
+Не забывай искать потерянные процессы SEARCHD и убивать их.
+ps aux | grep searchd
+killall -9 searchd

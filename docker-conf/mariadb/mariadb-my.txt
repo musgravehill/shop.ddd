@@ -1,0 +1,34 @@
+
+
+vscode docker mariadb_sdbn "Attach shell"
+terminal:
+
+mysqldump -u sdbn -psdbnpass sdbnv2 | gzip > /var/sdbnv2.sql.gz   THEN see in VScode file-tree, download file 
+
+
+====MARIADB IMPORT DUMP.SQL==============================================================================
+docker exec -i mariadb_sdbn sh -c 'exec mysql -usdbn -psdbnpass sdbnv2' < /home/eva/DEV/www/beznalom.com/SQL/bn.2023-04-27.sql
+
+docker exec -i service_mariadb_name sh -c 'exec mysql -uSOMEUSER -pSOMEPASS DBNAME' < /home/bob/DEV/www/LT/lt.sql
+
+ 
+docker exec -i mariadb_sdbn sh -c 'exec mysql -usdbn -psdbnpass sdbnv2' < /home/bob/DEV/BU/bznddd/bznddd.sql
+
+======================================================================================================================
+
+!!!NOT @localhost!!!! Because mariadb use DOCKER ip 173.58792927372  
+docker exec -it mariadb_sdbn mariadb --user root -p0
+ 
+DROP DATABASE bnsalon;
+CREATE DATABASE sdbnv2;
+SHOW DATABASES;
+DROP USER 'sdbn';
+CREATE USER 'sdbn' IDENTIFIED BY 'sdbnpass';
+SELECT User FROM mysql.user;
+GRANT ALL PRIVILEGES ON *.* TO sdbn IDENTIFIED BY 'sdbnpass'; 
+SHOW GRANTS FOR 'sdbn';
+QUIT;
+
+docker exec -i mariadb_sdbn sh -c 'exec mysql -usdbn -psdbnpass bnsalon' < /home/bob/DEV/www/bn-salon/bn2.sql
+
+ 

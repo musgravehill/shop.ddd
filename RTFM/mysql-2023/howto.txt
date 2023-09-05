@@ -1,0 +1,17 @@
+
+// sys/config/_db.php
+    'dsn' => 'mysql:host=localhost;dbname=sdbnv2',
+    'username' => 'sdbnv2',
+    'password' => '',
+
+
+mariadb
+DROP DATABASE sdbnv2;
+CREATE DATABASE sdbnv2;
+SHOW DATABASES;
+CREATE USER 'sdbnv2'@localhost IDENTIFIED BY '';
+SELECT User FROM mysql.user;
+GRANT ALL PRIVILEGES ON sdbnv2.* TO sdbnv2@localhost IDENTIFIED BY ''; 
+SHOW GRANTS FOR sdbnv2@localhost;
+QUIT;
+gunzip < /root/sdbnv2.sql.zip | mysql -u sdbnv2 -p sdbnv2

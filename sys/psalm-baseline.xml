@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.11.0@c9b192ab8400fdaf04b2b13d110575adc879aa90">
+  <file src="components/Cart/Bootstrap/SetUp.php">
+    <UndefinedClass>
+      <code>Yii</code>
+    </UndefinedClass>
+  </file>
+  <file src="components/Cart/Infrastructure/CartCookieRepository.php">
+    <UndefinedClass>
+      <code>Yii</code>
+      <code>Yii</code>
+    </UndefinedClass>
+  </file>
+  <file src="components/Cart/Infrastructure/CartDbRepository.php">
+    <UndefinedClass>
+      <code>Yii</code>
+    </UndefinedClass>
+  </file>
+  <file src="components/Offer/Bootstrap/SetUp.php">
+    <UndefinedClass>
+      <code>Yii</code>
+    </UndefinedClass>
+  </file>
+  <file src="components/Supplier/Infrastructure/SupplierRepository.php">
+    <UndefinedClass>
+      <code>Yii</code>
+      <code>Yii</code>
+    </UndefinedClass>
+  </file>
+</files>

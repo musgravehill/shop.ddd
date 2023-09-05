@@ -1,0 +1,4 @@
+
+============= PHPUNIT ==============================================================================================
+ 
+  /var/www/sdbn/shop/vendor/bin/phpunit --display-notices --colors=always --configuration=/var/www/sdbn/shop/components/Order/tests/phpunit.xml /var/www/sdbn/shop/components/Order/tests

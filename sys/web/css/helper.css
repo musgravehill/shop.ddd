@@ -1,0 +1,145 @@
+.helper-text-strike {
+    text-decoration: line-through;
+}
+
+.helper-cursor-pointer {
+    cursor: pointer;
+}
+
+.helper-cursor-sort {
+    cursor: ns-resize;
+}
+
+.helper-no-decor,
+.helper-no-decor :hover,
+.helper-no-decor :focus,
+.helper-no-decor :checked,
+.helper-no-decor :visited {
+    text-decoration: none !important;
+}
+
+.helper-underline,
+.helper-underline :hover,
+.helper-underline :focus,
+.helper-underline :checked,
+.helper-underline :visited {
+    text-decoration: underline !important;
+}
+
+.helper-dashed,
+.helper-dashed :hover,
+.helper-dashed :focus,
+.helper-dashed :checked,
+.helper-dashed :visited {
+    border-bottom: 1px dashed !important;
+}
+
+.helper-font-bold {
+    font-weight: bold;
+}
+
+.helper-font-italic {
+    font-style: italic;
+}
+
+.helper-font-30 {
+    font-size: 30px !important;
+    line-height: 34px !important;
+}
+
+.helper-font-24 {
+    font-size: 24px !important;
+    line-height: 28px !important;
+}
+
+.helper-font-23 {
+    font-size: 23px !important;
+    line-height: 27px !important;
+}
+
+.helper-font-22 {
+    font-size: 22px !important;
+    line-height: 26px !important;
+}
+
+.helper-font-21 {
+    font-size: 21px !important;
+    line-height: 25px !important;
+}
+
+.helper-font-20 {
+    font-size: 20px !important;
+    line-height: 24px !important;
+}
+
+.helper-font-19 {
+    font-size: 19px !important;
+    line-height: 23px !important;
+}
+
+.helper-font-18 {
+    font-size: 18px !important;
+    line-height: 22px !important;
+}
+
+.helper-font-17 {
+    font-size: 17px !important;
+    line-height: 21px !important;
+}
+
+.helper-font-16 {
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
+
+.helper-font-15 {
+    font-size: 15px !important;
+    line-height: 19px !important;
+}
+
+.helper-font-14 {
+    font-size: 14px !important;
+    line-height: 18px !important;
+}
+
+.helper-font-13 {
+    font-size: 13px !important;
+    line-height: 17px !important;
+}
+
+.helper-font-12 {
+    font-size: 12px !important;
+    line-height: 16px !important;
+}
+
+.helper-font-11 {
+    font-size: 11px !important;
+    line-height: 15px !important;
+}
+
+.helper-font-10 {
+    font-size: 10px !important;
+    line-height: 14px !important;
+}
+
+.helper-font-9 {
+    font-size: 9px !important;
+    line-height: 13px !important;
+}
+
+.helper-font-8 {
+    font-size: 8px !important;
+    line-height: 12px !important;
+}
+
+.helper-muted-semitransparent {
+    opacity: 0.4;
+}
+
+.helper-blur {
+    filter: blur(4px);
+}
+
+.helper-shadow {
+    box-shadow: 1px 1px 3px 0px #555;
+}

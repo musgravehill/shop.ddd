@@ -1,0 +1,72 @@
+version: '3.9'
+
+services:
+    nginx_sdbn:
+        image: nginx:1.21.6
+        ports:
+            - "80:80"
+        volumes:
+            - ./sys:/var/www/sdbn/sys #see rootDir ./docker-conf/nginxSites.confs
+            - /home/eva/DEV/www/pma-5.1.3:/var/www/pma.ru #see rootDir ./docker-conf/nginxSites.confs
+            - ./docker-conf/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf                   
+        networks:
+            - network_sdbn
+    php_sdbn:
+        #nginx listen   php_sdbn:9000   
+        build:
+            args:
+                - arg_user=bob
+                - arg_uid=1000
+                - arg_gid=1000
+            context: .
+            dockerfile: Dockerfile
+        container_name: php_sdbn
+        image: php_sdbn
+        volumes:
+            - ./sys:/var/www/sdbn/sys #see rootDir ./docker-conf/nginxSites.confs
+            - /home/eva/DEV/www/pma-5.1.3:/var/www/pma.ru #see rootDir ./docker-conf/nginxSites.confs
+            - ./docker-conf/docker-entrypoint.sh:/var/www/sdbn/docker-entrypoint.sh
+            - ./xdebug:/var/logs/xdebug
+            - ./docker-conf/php.ini:/usr/local/etc/php/php.ini
+        networks:
+            - network_sdbn
+        entrypoint: /var/www/sdbn/docker-entrypoint.sh
+        #docker-entrypoint.sh ==> cd /var/www/sdbn && composer update  
+        #May be better: docker-compose exec php_sdbn    composer install/update? 
+          
+    mariadb_sdbn:
+        # configDB.php host=mariadb_sdbn, NOT localhost!
+        container_name: mariadb_sdbn
+        image: mariadb:10.5.15
+        networks:
+            - network_sdbn
+        #restart: always  start after PC reboot... and use port.
+        environment:
+            #MARIADB_ROOT_HOST: localhost #Setting this to localhost will prevent any root user being accessible except via the unix socket.
+            MARIADB_ROOT_PASSWORD: 0
+            MARIADB_USER: sdbn
+            MARIADB_PASSWORD: sdbnpass
+            MARIADB_DATABASE: sdbnv2
+        volumes:
+            - volume_mariadb_sdbn:/var/lib/mysql #named volume - persistent, does not disappear after docker-compose down
+        #ports:
+            #- "3306:3306"
+    sphinx_sdbn:
+        image: macbre/sphinxsearch:3.4.1
+        #ports:
+           #- "9306:9306"
+        volumes:
+           - ./docker-conf/sphinx/data:/opt/sphinx/index # directory where sphinx will store index data
+           - ./docker-conf/sphinx/sphinx.conf:/opt/sphinx/conf/sphinx.conf # SphinxSE configuration file
+        mem_limit: 512m # match indexer.value from sphinx.conf   
+        networks:
+            - network_sdbn     
+
+networks:
+    network_sdbn:
+        driver: bridge
+
+
+
+volumes:
+    volume_mariadb_sdbn: #named volume - persistent, does not disappear after docker-compose down

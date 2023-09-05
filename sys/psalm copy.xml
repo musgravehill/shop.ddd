@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="6"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    findUnusedBaselineEntry="true"    
+    errorBaseline="psalm-baseline.xml"
+>
+    <projectFiles>           
+        <directory name="components/Cart" /> 
+        <directory name="components/Offer" /> 
+        <directory name="components/Order" />        
+        <directory name="components/Supplier" /> 
+        <ignoreFiles>
+            <directory name="assets" />
+            <directory name="commands" />
+            <directory name="config" />
+            <directory name="controllers" />
+            <directory name="mail" />
+            <directory name="migrations" />
+            <directory name="models" />
+            <directory name="runtime" />
+            <directory name="tests" />
+            <directory name="translates" />
+            <directory name="views" />
+            <directory name="web" />
+            <directory name="widgets" />  
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+</psalm>
